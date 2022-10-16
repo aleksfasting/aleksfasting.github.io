@@ -144,14 +144,13 @@ function lister() {
                     showPicksDiv.appendChild(div1000)
                 }
                 homePageButton = document.createElement('button')
-                
+
                 db.collection('teams').add({
                     name: teamName,
                     players: playerArr,
                     transfersLeft: 2,
                     usrnm: username,
-                    psswrd: password
-             
+                    psswrd: password  
                 })
                 homePageButton.innerHTML = 'Take me to the user-page'
                 homePageButton.addEventListener('click',confirm)
@@ -195,7 +194,6 @@ function searchPlayer() {
         if (!a[i].innerHTML.toLowerCase().includes(input)) {
             a[i].style.display="none";
         } else {
-            a[i].appendChild(b[i])
             a[i].style.display="list-item";
         }
     }
