@@ -148,7 +148,7 @@ function lister() {
                 db.collection('teams').add({
                     name: teamName,
                     players: playerArr,
-                    transfersleft: 2,
+                    transfersLeft: 2,
                     usrnm: username,
                     psswrd: password
              
