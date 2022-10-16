@@ -144,7 +144,7 @@ function lister() {
                     showPicksDiv.appendChild(div1000)
                 }
                 homePageButton = document.createElement('button')
-                /*
+                
                 db.collection('teams').add({
                     name: teamName,
                     players: playerArr,
@@ -152,7 +152,7 @@ function lister() {
                     usrnm: username,
                     psswrd: password
              
-                })   */
+                })
                 homePageButton.innerHTML = 'Take me to the user-page'
                 homePageButton.addEventListener('click',confirm)
                 homePageButton.setAttribute("class", "moro")
