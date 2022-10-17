@@ -150,7 +150,8 @@ function lister() {
                     players: playerArr,
                     transfersLeft: 2,
                     usrnm: username,
-                    psswrd: password  
+                    psswrd: password,
+                    points: 0,
                 })
                 homePageButton.innerHTML = 'Take me to the user-page'
                 homePageButton.addEventListener('click',confirm)
