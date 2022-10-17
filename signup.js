@@ -11,7 +11,7 @@ function signup() {
         u = usrnmEl.value
         p = psswrd1El.value
 
-        if (u.includes('æ','ø','å',' ') || p.includes('æ','ø','å',' ')) {
+        if (u.includes('æ','ø','å',' ', '%') || p.includes('æ','ø','å',' ', '%')) {
           window.alert("Username and password can't contain spaces, æ, ø or å")
         } else {
         db.collection("teams").get().then((snapshot) => {
