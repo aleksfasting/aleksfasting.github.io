@@ -12,7 +12,8 @@ url = document.location.href
 username = url.split('?')[1]
 password = url.split('?')[2]
 
-if ((username+password).includes('%')) {
+comb = username+password
+if (comb.includes('%')) {
     window.alert("Username and password can't include æ, ø, å, or spaces")
     window.location.replace('signup.html')
 }
