@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    height: 950px;
+    height: 1000px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(7,1fr);
@@ -118,20 +118,22 @@ img{
 }
 #UID{
     position: absolute;
-    top: 0;
-    right: 10%;
-    width: 270px;
+    top: -1%;
+    right: 2%;
+    width: 300px;
     color: white;
     text-align: center;
+    font-size: 19px;
 }
 #userID{
     font-size: 38px;
-    margin-top: -30px;
 }
-
 #Gw{
     font-size: 45px;
+    margin-top: 10px;
 }
+
+
 .transInButtons{
     background-image: linear-gradient(to right, rgb(0, 255, 135), rgb(2, 239, 255));
     border-radius: 3px;
@@ -205,13 +207,13 @@ img{
     margin-left: 30px;
     padding: 3px 15px;
     box-shadow: rgb(107 107 107 / 32%) 0px 8px 12px 0px;
-    height: 470px;
+    height: 500px;
     width: 770px;
     background-color: #f5f0f05b;
 }
 
 #lol{
-    margin-top: 30px;
+    margin-top: 40px;
 
 }
 #transdiv{
@@ -250,7 +252,7 @@ img{
     margin-top: -80px;
     background-repeat: no-repeat;
     background-position: 0px center, right top, 0px center;
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.2) 30px, white 70px), url(pattern-2-crop-184.d7588c45.png), linear-gradient(to right, rgb(2, 239, 255), rgb(98, 123, 255));
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.2) 30px, white 70px), url(../img/pattern-2-crop-184.d7588c45.png), linear-gradient(to right, rgb(2, 239, 255), rgb(98, 123, 255));
     box-shadow: rgb(107 107 107 / 18%) 8px 8px 12px 5px;
     width: 360px;
     height: 200px;
@@ -281,7 +283,7 @@ tbody > tr{
 
 th, td{
     border: 1px solid #000000;
-    padding: 15px 35px;
+    padding: 20px 40px;
   
 }
 
@@ -305,7 +307,6 @@ main{
     background-color: white;
     font-size: inherit;
     padding: 10px;
-    -webkit-appearance: textfield;
     box-sizing: inherit;
     border: 1px solid black;
     box-shadow: rgb(107 107 107 / 18%) 6px 6px 10px 3px;
@@ -354,7 +355,7 @@ main{
         margin-top: -80px;
         background-repeat: no-repeat;
         background-position: 0px center, right top, 0px center;
-        background-image: linear-gradient(rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.2) 30px, white 70px), url(pattern-2-crop-184.d7588c45.png), linear-gradient(to right, rgb(2, 239, 255), rgb(98, 123, 255));
+        background-image: linear-gradient(rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.2) 30px, white 70px), url(../img/pattern-2-crop-184.d7588c45.png), linear-gradient(to right, rgb(2, 239, 255), rgb(98, 123, 255));
         box-shadow: rgb(107 107 107 / 18%) 8px 8px 12px 5px;
         width: 270px;
         height: 160px;
@@ -404,6 +405,18 @@ main{
   
 }
 
+@media only screen and (max-width:1050px){
+
+  #Gw{
+    font-size: 30px;
+}
+#userID{
+    font-size: 30px;
+}
+    
+
+}
+
 @media only screen and (max-width: 1000px){
     body{
         overflow-x: hidden;
@@ -420,7 +433,7 @@ main{
         border-radius: 6px;
         background-repeat: no-repeat;
         background-position: 0px center, right top, 0px center;
-        background-image: linear-gradient(rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.2) 30px, white 70px), url(pattern-2-crop-184.d7588c45.png), linear-gradient(to right, rgb(2, 239, 255), rgb(98, 123, 255));
+        background-image: linear-gradient(rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.2) 30px, white 70px), url(../img/pattern-2-crop-184.d7588c45.png), linear-gradient(to right, rgb(2, 239, 255), rgb(98, 123, 255));
         box-shadow: rgb(107 107 107 / 18%) 8px 8px 12px 5px;
         width: 270px;
         height: 160px;
@@ -491,6 +504,13 @@ main{
         right: 0;
     }
 
+    #Gw{
+        font-size: 20px;
+    }
+    #userID{
+        font-size: 20px;
+    }
+
 }
 @media only screen and (max-width: 690px){
 
@@ -521,7 +541,7 @@ th, td{
     border-radius: 6px;
     background-repeat: no-repeat;
     background-position: 0px center, right top, 0px center;
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.2) 30px, white 70px), url(pattern-2-crop-184.d7588c45.png), linear-gradient(to right, rgb(2, 239, 255), rgb(98, 123, 255));
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.2) 30px, white 70px), url(../img/pattern-2-crop-184.d7588c45.png), linear-gradient(to right, rgb(2, 239, 255), rgb(98, 123, 255));
     box-shadow: rgb(107 107 107 / 18%) 8px 8px 12px 5px;
     width: 170px;
     height: 60px;
