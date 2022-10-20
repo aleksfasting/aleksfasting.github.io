@@ -119,14 +119,19 @@ img{
 #UID{
     position: absolute;
     top: 0;
-    right: 2%;
+    right: 10%;
     width: 270px;
     color: white;
     text-align: center;
-    font-size: 19px;
+}
+#userID{
+    font-size: 38px;
+    margin-top: -30px;
 }
 
-
+#Gw{
+    font-size: 45px;
+}
 .transInButtons{
     background-image: linear-gradient(to right, rgb(0, 255, 135), rgb(2, 239, 255));
     border-radius: 3px;
