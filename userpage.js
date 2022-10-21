@@ -267,8 +267,8 @@ db.collection('teams').onSnapshot((snapshot) => {
 
         for (j = 0; j < documents1.length;j++) {
             if (documents1[j].id == userID) {
-                playersArr = documents1[j].data().playersLastGW
-                playersArrSave = documents1[j].data().playersLastGW
+                playersArr = documents1[j].data().playersThisGW
+                playersArrSave = documents1[j].data().playersThisGW
                 points = documents1[j].data().points
                 showTeamNames(documents1[j].data())
             }
