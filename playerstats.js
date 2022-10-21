@@ -14,13 +14,13 @@ function showPlayerEl(doc) { // Funksjon for å vise spillerne i tabell
         let rounds = doc.data().goalsInRound.length
 
         tdEl = document.createElement('td') // for poeng i siste kampen
-        ptsGWEl = calcPointsRound(rounds-1,doc.data().goalsInRound,doc.data().assistsInRound,doc.data().MOTM,doc.data().CSInRound)
+        ptsGWEl = calcPointsRound(rounds-1,doc.data().goalsInRound,doc.data().assistsInRound,doc.data().MOTM,doc.data().CSInRound, doc.data().keeper)
         tdEl.innerHTML = ptsGWEl
         ptsGW[doc.id] = ptsGWEl
         trEl.appendChild(tdEl)
 
         tdEl = document.createElement('td') // for poeng totalt
-        ptsTOTEl = calcPoints(rounds, doc.data().goalsInRound, doc.data().assistsInRound, doc.data().MOTM, doc.data().CSInRound)
+        ptsTOTEl = calcPoints(rounds, doc.data().goalsInRound, doc.data().assistsInRound, doc.data().MOTM, doc.data().CSInRound, doc.data().keeper)
         tdEl.innerHTML = ptsTOTEl
         ptsTOT[doc.id] = ptsTOTEl
         trEl.appendChild(tdEl)
@@ -78,13 +78,13 @@ function sortGW(evt) {
             trEl.appendChild(tdEl)
 
             tdEl = document.createElement('td') // for poeng i siste kampen
-            ptsGWEl = calcPointsRound(rounds-1,doc.data().goalsInRound,doc.data().assistsInRound,doc.data().MOTM,doc.data().CSInRound)
+            ptsGWEl = calcPointsRound(rounds-1,doc.data().goalsInRound,doc.data().assistsInRound,doc.data().MOTM,doc.data().CSInRound, doc.data().keeper)
             tdEl.innerHTML = ptsGWEl
             ptsGW[doc.id] = ptsGWEl
             trEl.appendChild(tdEl)
 
             tdEl = document.createElement('td') // for poeng totalt
-            ptsTOTEl = calcPoints(rounds, doc.data().goalsInRound, doc.data().assistsInRound, doc.data().MOTM, doc.data().CSInRound)
+            ptsTOTEl = calcPoints(rounds, doc.data().goalsInRound, doc.data().assistsInRound, doc.data().MOTM, doc.data().CSInRound, doc.data().keeper)
             tdEl.innerHTML = ptsTOTEl
             ptsTOT[doc.id] = ptsTOTEl
             trEl.appendChild(tdEl)
@@ -138,13 +138,13 @@ function sortTOT(evt) {
             trEl.appendChild(tdEl)
 
             tdEl = document.createElement('td') // for poeng i siste kampen
-            ptsGWEl = calcPointsRound(rounds-1,doc.data().goalsInRound,doc.data().assistsInRound,doc.data().MOTM,doc.data().CSInRound)
+            ptsGWEl = calcPointsRound(rounds-1,doc.data().goalsInRound,doc.data().assistsInRound,doc.data().MOTM,doc.data().CSInRound, doc.data().keeper)
             tdEl.innerHTML = ptsGWEl
             ptsGW[doc.id] = ptsGWEl
             trEl.appendChild(tdEl)
 
             tdEl = document.createElement('td') // for poeng totalt
-            ptsTOTEl = calcPoints(rounds, doc.data().goalsInRound, doc.data().assistsInRound, doc.data().MOTM, doc.data().CSInRound)
+            ptsTOTEl = calcPoints(rounds, doc.data().goalsInRound, doc.data().assistsInRound, doc.data().MOTM, doc.data().CSInRound, doc.data().keeper)
             tdEl.innerHTML = ptsTOTEl
             ptsTOT[doc.id] = ptsTOTEl
             trEl.appendChild(tdEl)

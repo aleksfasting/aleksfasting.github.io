@@ -74,7 +74,7 @@ function showTeamStats(doc1, playerName,transfersLeft) {
     trEl.appendChild(tdEl)
 
     tdEl = document.createElement('td') // poeng totalt
-    tot = calcPoints(rounds, doc1.goalsInRound, doc1.assistsInRound, doc1.MOTM, doc1.CSInRound)
+    tot = calcPoints(rounds, doc1.goalsInRound, doc1.assistsInRound, doc1.MOTM, doc1.CSInRound, doc1.keeper)
     tdEl.innerHTML = tot
     trEl.appendChild(tdEl)
 
