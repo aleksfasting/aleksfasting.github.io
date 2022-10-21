@@ -62,7 +62,7 @@ function collectTeamStats(doc,playerName,transfersLeft) { // funksjon for å vis
 
 function showTeamStats(doc1, playerName,transfersLeft) {
     if (doc1.goalsInRound != undefined) {
-        let rounds = doc1.goalsInRound.length // antall runder kamper spilt
+        rounds = doc1.goalsInRound.length // antall runder kamper spilt
     } else {
         rounds = 0
     }
