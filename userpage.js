@@ -15,7 +15,7 @@ url = document.location.href // hente bruker-ID fra url
 expvar = url.split('?')[1]
 userID = expvar.split('=')[1]; // lagre brukeren-ID is userID
 
-countDownDate = new Date("Oct 21, 2022 11:40:00").getTime();
+countDownDate = new Date("Nov 4, 2022 11:00:00").getTime();
 
 // Update the count down every 1 second
 x = setInterval(function() {
