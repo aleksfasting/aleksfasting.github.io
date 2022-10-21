@@ -44,19 +44,30 @@ x = setInterval(function() {
 
 
 function showTeamNames(doc) { // funksjon for å vise spillernavn
+    gwpts = 0
+    
+    tallet = 0
     for (i=0; i<doc.players.length;i++) { // hente alle spillerene i spiller-arrayen
         collectTeamStats(doc,doc.players[i],doc.transfersLeft) // legge til spillerstatistikk
     }
+    
+    trEl2 = document.querySelector('#performance')
+
+    tdEl = document.createElement('td')
+    tdEl.innerHTML = doc.points
+    trEl2.appendChild(tdEl)
 }
 
 function collectTeamStats(doc,playerName,transfersLeft) { // funksjon for å vise spillerstatisikk
     db.collection('players').get().then((snapshot) => { // firebase for å hente stats til spillere i lag 
-        documents2 = snapshot.docs;
-        for (k=0;k<documents2.length;k++) {
-            if (playerName == documents2[k].data().name) {
-                showTeamStats(documents2[k].data(),playerName,transfersLeft)
+        doc2 = snapshot.docs;
+        for (k=0;k<doc2.length;k++) {
+            if (playerName == doc2[k].data().name) {
+                showTeamStats(doc2[k].data(),playerName,transfersLeft)
             }
         }
+
+
     })
 }
 
@@ -66,6 +77,16 @@ function showTeamStats(doc1, playerName,transfersLeft) {
     } else {
         rounds = 0
     }
+    
+    gwpts += calcPointsRound(rounds-1, doc1.goalsInRound, doc1.assistsInRound, doc1.MOTM, doc1.CSInRound, doc1.keeper)
+    if (tallet == 0) {
+        tdEl = document.createElement('td')
+        tdEl.innerHTML = gwpts
+        trEl2.appendChild(tdEl)
+        tallet = 1
+    }
+
+
     tbodyEl = document.querySelector('#team') // henter tbody
     trEl = document.createElement('tr') //lager rad
 
