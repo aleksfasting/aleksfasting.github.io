@@ -270,7 +270,7 @@ function searchPlayer() {
 
 db = firebase.firestore();
 
-db.collection('teams').onSnapshot((snapshot) => {
+db.collection('teams').doc(userID).onSnapshot((snapshot) => {
     db.collection("teams").get().then((snapshot) => { // firebase for å hente spillere i lag
         let documents1 = snapshot.docs
 
