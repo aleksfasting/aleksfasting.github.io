@@ -44,11 +44,14 @@ x = setInterval(function() {
 
 
 function showTeamNames(doc) { // funksjon for å vise spillernavn
-    gwpts = 0
-    
-    tallet = 0
     for (i=0; i<doc.players.length;i++) { // hente alle spillerene i spiller-arrayen
         collectTeamStats(doc,doc.players[i],doc.transfersLeft) // legge til spillerstatistikk
+    }
+
+    gwpts = 0
+    tallet = 0
+    for (i=0; i<doc.players.length;i++) {
+        performanceStats(doc,doc.playersThisGW[i])
     }
     
     trEl2 = document.querySelector('#performance')
@@ -56,6 +59,31 @@ function showTeamNames(doc) { // funksjon for å vise spillernavn
     tdEl = document.createElement('td')
     tdEl.innerHTML = doc.points
     trEl2.appendChild(tdEl)
+}
+
+function performanceStats(doc,playerGW) {
+    db.collection('players').get().then((snapshot) => {
+        dok = snapshot.docs
+        for (p=0;p<dok.length;p++) {
+            if (dok[p].data().name == playerGW) {
+                dok = dok[p].data()
+                if (dok.goalsInRound != undefined) {
+                    rounds = dok.goalsInRound.length // antall runder kamper spilt
+                } else {
+                    rounds = 0
+                }
+                
+                gwpts += calcPointsRound(rounds-1, dok.goalsInRound, dok.assistsInRound, dok.MOTM, dok.CSInRound, dok.keeper)
+                tallet++
+                if (tallet == 5) {
+                    trEl2.querySelector('#performance')
+                    tdEl = document.createElement('td')
+                    tdEl.innerHTML = gwpts
+                    trEl2.appendChild(tdEl)
+                }
+            }
+        }
+    })
 }
 
 function collectTeamStats(doc,playerName,transfersLeft) { // funksjon for å vise spillerstatisikk
@@ -66,8 +94,6 @@ function collectTeamStats(doc,playerName,transfersLeft) { // funksjon for å vis
                 showTeamStats(doc2[k].data(),playerName,transfersLeft)
             }
         }
-
-
     })
 }
 
@@ -77,15 +103,6 @@ function showTeamStats(doc1, playerName,transfersLeft) {
     } else {
         rounds = 0
     }
-    
-    gwpts += calcPointsRound(rounds-1, doc1.goalsInRound, doc1.assistsInRound, doc1.MOTM, doc1.CSInRound, doc1.keeper)
-    if (tallet == 0) {
-        tdEl = document.createElement('td')
-        tdEl.innerHTML = gwpts
-        trEl2.appendChild(tdEl)
-        tallet = 1
-    }
-
 
     tbodyEl = document.querySelector('#team') // henter tbody
     trEl = document.createElement('tr') //lager rad
