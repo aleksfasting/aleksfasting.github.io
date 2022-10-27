@@ -39,18 +39,21 @@
 </div>
 <main>
   <div id = "text">
-    <h1> Your Team Next Game Week:</h1>
+    <div><h1> Your Team Next Game Week:</h1></div>
+    <div><h2 id="translefth2">Transfers Left: </h2></div>
+    
   </div>
   <div id = "alt">
     <div id = "Mboks">
       <div id = "tabell">
        <table id = "lol">
          <thead>
-           <tr>
+           <tr id="headerRow">
              <th>Name</th>
              <th>PTS</th>
              <th>Team</th>
              <th>Pos</th>
+             <th id="resetth"><button disabled="disabled" id="resetbutton">Reset</button></th>
            </tr>
          </thead>
          <tbody id="team">
@@ -79,7 +82,9 @@
           
         </div>
         <div id="registerdiv"></div>
-        <div id="transdiv"></div>
+        <div id="transdiv">
+          <h2 id = "morendin">Transfers left: </h2>
+        </div>
      
    
       </div>

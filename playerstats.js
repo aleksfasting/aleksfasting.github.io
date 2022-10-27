@@ -55,8 +55,12 @@ function showPlayerEl(doc) { // Funksjon for å vise spillerne i tabell
     tdEl = document.createElement('td') // lagnavn
     tdEl.innerHTML = doc.data().team
     trEl.appendChild(tdEl)
+    trEl.team = doc.data().team
 
     tbodyEl.appendChild(trEl) // legge alt til i rad
+
+    inputEl = document.querySelector('#laginput')
+    inputEl.setAttribute('onkeyup', 'teamFilter()')
 }
 
 function sortGW(evt) {
@@ -113,8 +117,9 @@ function sortGW(evt) {
             tdEl.innerHTML = doc.data().team
             trEl.appendChild(tdEl)
 
-            tbodyEl.appendChild(trEl)
+            trEl.team = doc.data().team
 
+            tbodyEl.appendChild(trEl)
         })
     }
 }
@@ -173,8 +178,9 @@ function sortTOT(evt) {
             tdEl.innerHTML = doc.data().team
             trEl.appendChild(tdEl)
 
-            tbodyEl.appendChild(trEl)
+            trEl.team = doc.data().team
 
+            tbodyEl.appendChild(trEl)
         })
     }
 }
@@ -246,4 +252,22 @@ function filterOutfield() {
             a[i].style.display = 'table-row'
         }
     }
+}
+
+function teamFilter() {
+    x = document.querySelectorAll('.listItem')
+    teamInput = document.querySelector('#laginput').value
+    for (teamButton of x) {
+        if (teamButton.team.toLowerCase().includes(teamInput.toLowerCase())) {
+            teamButton.style.display = 'table-row'
+        } else {
+            teamButton.style.display = 'none'
+        }
+    }
+}
+
+document.querySelector('#rbtn').addEventListener('click',refresh)
+
+function refresh() {
+    document.location.reload()
 }
