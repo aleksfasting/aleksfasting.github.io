@@ -15,7 +15,7 @@ url = document.location.href // hente bruker-ID fra url
 expvar = url.split('?')[1]
 userID = expvar.split('=')[1]; // lagre brukeren-ID is userID
 
-countDownDate = new Date("Nov 20, 2022 00:00:01").getTime();
+countDownDate = new Date("Dec 1, 2022 10:30:00").getTime();
 
 resetButton = document.querySelector('#resetbutton')
 resetButton.innerHTML = 'Reset'
