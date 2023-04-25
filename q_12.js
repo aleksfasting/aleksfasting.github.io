@@ -3,7 +3,7 @@ button = document.querySelector("#button")
 button.addEventListener('click', submit)
 
 function submit() {
-    if (input.value.toLowerCase() == 'mystic') {
-        document.location.replace("finish_9.html")
+    if (input.value == 'shiza1') {
+        //document.location.replace("finish_12.html")
     }
 }
