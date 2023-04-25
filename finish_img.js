@@ -7,16 +7,16 @@ b2 = document.getElementById('b2')
 b1.addEventListener('click', b1F)
 b2.addEventListener('click', b2F)
 
+pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
+
 function b1F() {
     imgNum--
     if (imgNum == 0) imgNum = 5
-    pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
     imgEl.src = 'img/'+imgEl.src.split('/')[10]+'/img'+String(imgNum)+'.jpg'
 }
 
 function b2F() {
     imgNum++
     if (imgNum == 6) imgNum = 1
-    pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
     imgEl.src = 'img/'+pack+'/img'+String(imgNum)+'.jpg'
 }

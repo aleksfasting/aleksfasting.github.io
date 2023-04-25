@@ -22,10 +22,12 @@ descs = [
     'KLARA!!!'
 ]
 
+
+pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
+
 function b1F() {
     imgNum--
     if (imgNum == 0) imgNum = 10
-    pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
     imgEl.src = 'img/'+pack+'/img'+String(imgNum)+'.jpg'
     des.innerHTML = descs[imgNum - 1]
 }
@@ -33,7 +35,6 @@ function b1F() {
 function b2F() {
     imgNum++
     if (imgNum == 11) imgNum = 1
-    pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
     imgEl.src = 'img/'+pack+'/img'+String(imgNum)+'.jpg'
     des.innerHTML = descs[imgNum - 1]
 }

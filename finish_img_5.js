@@ -20,10 +20,11 @@ descs = [
     'Du som sitter og chiller'
 ]
 
+pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
+
 function b1F() {
     imgNum--
     if (imgNum == 0) imgNum = 8
-    pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
     imgEl.src = 'img/'+pack+'/img'+String(imgNum)+'.jpg'
     des.innerHTML = descs[imgNum-1]
 }
@@ -31,7 +32,6 @@ function b1F() {
 function b2F() {
     imgNum++
     if (imgNum == 9) imgNum = 1
-    pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
     imgEl.src = 'img/'+pack+'/img'+String(imgNum)+'.jpg'
     des.innerHTML = descs[imgNum-1]
 }
