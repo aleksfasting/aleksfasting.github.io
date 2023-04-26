@@ -12,7 +12,7 @@ pack = imgEl.src.split('/')[imgEl.src.split('/').length-2]
 function b1F() {
     imgNum--
     if (imgNum == 0) imgNum = 5
-    imgEl.src = 'img/'+imgEl.src.split('/')[10]+'/img'+String(imgNum)+'.jpg'
+    imgEl.src = 'img/'+pack+'/img'+String(imgNum)+'.jpg'
 }
 
 function b2F() {
