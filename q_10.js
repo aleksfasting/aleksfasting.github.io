@@ -4,6 +4,6 @@ button.addEventListener('click', submit)
 
 function submit() {
     if (input.value.toLowerCase() == 'css') {
-        document.location.replace("finish_10.html")
+        document.location.replace("finish_11.html")
     }
 }
